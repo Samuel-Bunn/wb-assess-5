@@ -10,7 +10,7 @@ export class Human extends Model {
   }
 
   getFullName() { 
-    return Human.fname + '' + Human.lname
+    return this.fname + '' + this.lname
   } 
 }
 
@@ -75,4 +75,10 @@ Animal.init(
 Human.hasMany(Animal, { foreignKey: 'human_id'})
 Animal.belongsTo(Human, {foreignKey: 'human_id'})
 
+db.sync()
+
+const animals = 
+
+
+db.close()
 export default db;
