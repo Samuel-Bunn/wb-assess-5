@@ -16,10 +16,10 @@ export class Human extends Model {
 
 Human.init(
   {
-    human_id: {
+    humanId: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primarykey: true,
+      primaryKey: true,
     },
     fname: {
       type: DataTypes.STRING,
@@ -35,7 +35,7 @@ Human.init(
     }
   },
   {
-    modelName: 'humans',
+    modelName: 'human',
     sequelize: db,
   },
 );
@@ -48,10 +48,10 @@ export class Animal extends Model {
 
 Animal.init(
   {
-    animal_id: {
+    animalId: {
     type: DataTypes.INTEGER,
     allowNull: false,
-    primarykey: true,
+    primaryKey: true,
   },
     name: {
       type: DataTypes.STRING,
@@ -61,7 +61,7 @@ Animal.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    birth_year: {
+    birthYear: {
       type: DataTypes.INTEGER,
       allowNull: false,
     }
@@ -72,13 +72,13 @@ Animal.init(
   }
 )
 
-Human.hasMany(Animal, { foreignKey: 'human_id'})
-Animal.belongsTo(Human, {foreignKey: 'human_id'})
+Human.hasMany(Animal, { foreignKey: 'humanId'})
+Animal.belongsTo(Human, {foreignKey: 'humanId'})
 
-db.sync()
+// db.sync()
 
-const animals = 
+// const animals = 
 
 
-db.close()
+// db.close()
 export default db;
